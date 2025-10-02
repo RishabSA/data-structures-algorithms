@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/rishabalagharu/Documents/Coding/C++ Projects/cplusplus-data-structures-and-algorithms",
+      "program": "/Users/rishabalagharu/Documents/Coding/C++ Projects/cplusplus-data-structures-and-algorithms/build/Debug/outDebug"
+    }
+  ]
+}
