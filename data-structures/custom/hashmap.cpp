@@ -140,6 +140,7 @@ private:
 
 int main() {
     HashmapWithChaining hashmap = HashmapWithChaining();
+    // HashmapWithoutChaining hashmap = HashmapWithoutChaining(3);
 
     hashmap.add("hello world", 100);
     hashmap.add("testing123", 5);

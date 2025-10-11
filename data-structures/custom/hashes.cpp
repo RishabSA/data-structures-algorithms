@@ -15,6 +15,13 @@ Hash functions can produce the same hashed output given different inputs
 
 class Hash {
 public:
+    // Large prime numbers
+    const int p1 = 4474087;
+    const int p2 = 1813391;
+    const int p3 = 3903299;
+
+    int count = 0;
+
     // Implements a simple hash function with 3 large prime numbers
     int hash_data(int data) {
         int a = (data + p1) % p3;
@@ -49,13 +56,6 @@ public:
 
         return hash_data(sum);
     }
-private:
-    // Large prime numbers
-    const int p1 = 4474087;
-    const int p2 = 1813391;
-    const int p3 = 3903299;
-
-    int count = 0;
 };
 
 // int main() {
