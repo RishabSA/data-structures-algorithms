@@ -70,35 +70,17 @@ public:
     };
 };
 
-class HyperLogLog {
-public:
-    HyperLogLog() {
-
-    };
-
-    void add(int data) {
-
-    };
-
-    int estimate() {
-
-    };
-};
-
 int main() {
     LinearCounting LC = LinearCounting(2500);
     MinimumValues MV = MinimumValues(25);
-    HyperLogLog HLL = HyperLogLog(25);
 
     for (int i = 0; i < 1000; i++) {
         LC.add(i);
         MV.add(i);
-        HLL.add(i);
     }
 
     std::cout << "Estimate of unique items (Linear Counting): " << LC.estimate() << std::endl;
     std::cout << "Estimate of unique items (Minimum Values): " << MV.estimate() << std::endl;
-    std::cout << "Estimate of unique items (HyperLogLog): " << HLL.estimate() << std::endl;
 
     return 0;
 }
