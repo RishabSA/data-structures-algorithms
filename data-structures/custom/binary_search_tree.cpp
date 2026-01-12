@@ -1,5 +1,18 @@
 #include <iostream>
 
+/*
+Notes:
+
+A binary search tree (BST) is a data structure where each node has at most two children, with the left child being less than the parent and the right child being greater than the parent. 
+
+Access/search by key: O(log N)
+Insert: O(log N)
+Delete: O(log N)
+Find min/max: O(log N)
+Traversal (inorder/preorder/postorder): O(N)
+Height computation: O(N)
+*/
+
 class BSTNode {
 public:
     int current;
@@ -187,11 +200,29 @@ public:
         return nullptr;
     };
 
-    BSTNode* getSmallestNode(BSTNode* currentNode) {
-        if (currentNode->left) return getSmallestNode(currentNode->left);
-        
+    BSTNode* getMin() {
+        if (root == nullptr) return nullptr;
+
+        return getMin(root);
+    };
+
+    BSTNode* getMin(BSTNode* currentNode) {
+        if (currentNode->left) return getMin(currentNode->left);
+
         return currentNode;
-    }
+    };
+
+    BSTNode* getMax() {
+        if (root == nullptr) return 0;
+
+        return getMax(root);
+    };
+
+    BSTNode* getMax(BSTNode* currentNode) {
+        if (currentNode->right) return getMax(currentNode->right);
+
+        return currentNode;
+    };
 };
 
 int main() {
@@ -209,6 +240,11 @@ int main() {
     std::cout << "BST Searching for -1: " << *bst.search(-1) << std::endl;
     std::cout << "BST Searching for 6: " << *bst.search(6) << std::endl;
     std::cout << "BST Searching for 67: " << bst.search(67) << std::endl;
+
+    std::cout << std::endl;
+
+    std::cout << "Minimum node value: " << bst.getMin()->current << std::endl;
+    std::cout << "Maximum node value: " << bst.getMax()->current << std::endl;
 
     return 0;
 }
